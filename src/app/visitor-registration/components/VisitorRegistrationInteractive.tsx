@@ -253,11 +253,11 @@ const VisitorRegistrationInteractive = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
             <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-3">
-              Complete Your Registration
+              Finalisez votre inscription
             </h2>
             <p className="text-muted-foreground">
-              Fill in your details to secure your spot at the expo. The process takes less than 5
-              minutes.
+              Renseignez vos informations pour confirmer votre participation à l&apos;expo. Le
+              processus ne prend pas plus de 5 minutes.
             </p>
           </div>
 
