@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --color-primary: #DC2626; /* red-600 - African ambition and energy */
+    --color-primary-foreground: #FFFFFF; /* white */
+    
+    /* Secondary Colors */
+    --color-secondary: #059669; /* emerald-600 - Growth and prosperity */
+    --color-secondary-foreground: #FFFFFF; /* white */
+    
+    /* Accent Colors */
+    --color-accent: #F59E0B; /* amber-500 - Premium opportunities */
+    --color-accent-foreground: #111827; /* gray-900 */
+    
+    /* Background Colors */
+    --color-background: #FAFAFA; /* gray-50 - Clean canvas */
+    --color-foreground: #111827; /* gray-900 - Primary text */
+    
+    /* Surface Colors */
+    --color-card: #FFFFFF; /* white - Content cards */
+    --color-card-foreground: #111827; /* gray-900 */
+    --color-popover: #FFFFFF; /* white */
+    --color-popover-foreground: #111827; /* gray-900 */
+    
+    /* Muted Colors */
+    --color-muted: #F3F4F6; /* gray-100 */
+    --color-muted-foreground: #6B7280; /* gray-500 - Secondary text */
+    
+    /* Border & Input */
+    --color-border: #E5E7EB; /* gray-200 */
+    --color-input: #E5E7EB; /* gray-200 */
+    --color-ring: #DC2626; /* red-600 */
+    
+    /* Status Colors */
+    --color-success: #10B981; /* emerald-500 - Registration confirmations */
+    --color-success-foreground: #FFFFFF; /* white */
+    --color-warning: #F59E0B; /* amber-500 - Deadline urgency */
+    --color-warning-foreground: #111827; /* gray-900 */
+    --color-error: #EF4444; /* red-500 - Form validation */
+    --color-error-foreground: #FFFFFF; /* white */
+    --color-destructive: #EF4444; /* red-500 */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    
+    /* Additional Brand Colors */
+    --color-text-primary: #111827; /* gray-900 - Extended reading comfort */
+    --color-text-secondary: #6B7280; /* gray-500 - Supporting details */
+    --color-surface: #FFFFFF; /* white - Form backgrounds */
+    
+    /* Spacing & Layout */
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  /* Custom shadow with warm tint */
+  .shadow-warm {
+    box-shadow: 0 4px 6px -1px rgba(220, 38, 38, 0.1), 0 2px 4px -1px rgba(220, 38, 38, 0.06);
+  }
+  
+  .shadow-warm-lg {
+    box-shadow: 0 10px 15px -3px rgba(220, 38, 38, 0.1), 0 4px 6px -2px rgba(220, 38, 38, 0.05);
+  }
+  
+  .shadow-warm-xl {
+    box-shadow: 0 20px 25px -5px rgba(220, 38, 38, 0.1), 0 10px 10px -5px rgba(220, 38, 38, 0.04);
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .transition-confident {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  /* Accent font for testimonials */
+  .font-accent {
+    font-family: 'Playfair Display', serif;
+  }
+}
