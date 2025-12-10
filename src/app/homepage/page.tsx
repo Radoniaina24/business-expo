@@ -30,7 +30,7 @@ export default function HomePage() {
         <RegistrationStats />
         <PartnersSection />
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
