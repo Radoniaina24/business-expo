@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/index.css';
+import Footer from './homepage/components/Footer';
 
 export const viewport = {
   width: 'device-width',
@@ -23,6 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         {children}
+        <Footer />
         <script
           type="module"
           async

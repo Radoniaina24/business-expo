@@ -20,7 +20,7 @@ const Header = ({ className = '' }: HeaderProps) => {
   ];
 
   const moreItems = [
-    { label: 'Contact Support', href: '/', icon: 'ChatBubbleLeftRightIcon' }, //contact-support
+    { label: 'Contact Support', href: '/contact-support', icon: 'ChatBubbleLeftRightIcon' }, //contact-support
   ];
 
   const toggleMobileMenu = () => {

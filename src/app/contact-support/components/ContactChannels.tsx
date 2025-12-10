@@ -25,7 +25,7 @@ const ContactChannels = ({ className = '' }: ContactChannelsProps) => {
       action: '+230 5 123 4567',
       actionLabel: 'Appeler Maintenant',
       availability: 'Lun-Ven: 8h00-18h00 (GMT+4)',
-      color: 'bg-primary'
+      color: 'bg-primary',
     },
     {
       id: 'email',
@@ -35,7 +35,7 @@ const ContactChannels = ({ className = '' }: ContactChannelsProps) => {
       action: 'contact@madagascarexpo.mu',
       actionLabel: 'Envoyer un Email',
       availability: 'Réponse sous 24 heures',
-      color: 'bg-secondary'
+      color: 'bg-secondary',
     },
     {
       id: 'whatsapp',
@@ -45,18 +45,18 @@ const ContactChannels = ({ className = '' }: ContactChannelsProps) => {
       action: '+230 5 987 6543',
       actionLabel: 'Ouvrir WhatsApp',
       availability: 'Disponible 24/7',
-      color: 'bg-accent'
+      color: 'bg-accent',
     },
     {
       id: 'location',
       icon: 'MapPinIcon',
       title: 'Bureau Principal',
       description: 'Visitez-nous à notre bureau à Port Louis',
-      action: '15 Avenue de l\'Indépendance, Port Louis, Maurice',
-      actionLabel: 'Obtenir l\'Itinéraire',
+      action: "15 Avenue de l'Indépendance, Port Louis, Maurice",
+      actionLabel: "Obtenir l'Itinéraire",
       availability: 'Lun-Ven: 9h00-17h00',
-      color: 'bg-primary'
-    }
+      color: 'bg-primary',
+    },
   ];
 
   return (
@@ -84,28 +84,35 @@ const ContactChannels = ({ className = '' }: ContactChannelsProps) => {
               className="bg-card border border-border rounded-xl p-6 lg:p-8 hover:shadow-warm-lg transition-smooth group"
             >
               <div className="flex items-start space-x-4">
-                <div className={`${channel.color} rounded-lg p-3 flex-shrink-0 group-hover:scale-110 transition-smooth`}>
-                  <Icon name={channel.icon as any} size={24} variant="outline" className="text-white" />
+                <div
+                  className={`${channel.color} rounded-lg p-3 flex-shrink-0 group-hover:scale-110 transition-smooth`}
+                >
+                  <Icon
+                    name={channel.icon as any}
+                    size={24}
+                    variant="outline"
+                    className="text-white"
+                  />
                 </div>
-                
+
                 <div className="flex-1 min-w-0">
                   <h3 className="text-xl font-bold text-foreground mb-2">{channel.title}</h3>
                   <p className="text-muted-foreground mb-4">{channel.description}</p>
-                  
+
                   <div className="bg-muted rounded-lg p-3 mb-4">
                     <p className="text-foreground font-medium break-all">{channel.action}</p>
                   </div>
-                  
+
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                       <Icon name="ClockIcon" size={16} variant="outline" />
                       <span>{channel.availability}</span>
                     </div>
-                    
-                    <button className="text-primary font-semibold text-sm hover:text-primary/80 transition-smooth flex items-center space-x-1">
+
+                    {/* <button className="text-primary font-semibold text-sm hover:text-primary/80 transition-smooth flex items-center space-x-1">
                       <span>{channel.actionLabel}</span>
                       <Icon name="ArrowRightIcon" size={16} variant="outline" />
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </div>
@@ -117,7 +124,12 @@ const ContactChannels = ({ className = '' }: ContactChannelsProps) => {
         <div className="mt-8 bg-gradient-to-r from-error/10 to-warning/10 border border-error/20 rounded-xl p-6 lg:p-8">
           <div className="flex items-start space-x-4">
             <div className="bg-error rounded-lg p-3 flex-shrink-0">
-              <Icon name="ExclamationTriangleIcon" size={24} variant="solid" className="text-white" />
+              <Icon
+                name="ExclamationTriangleIcon"
+                size={24}
+                variant="solid"
+                className="text-white"
+              />
             </div>
             <div className="flex-1">
               <h3 className="text-xl font-bold text-foreground mb-2">Contact d'Urgence</h3>
@@ -125,7 +137,10 @@ const ContactChannels = ({ className = '' }: ContactChannelsProps) => {
                 Pour les questions urgentes pendant l'événement ou les urgences liées à l'exposition
               </p>
               <div className="flex flex-wrap gap-4">
-                <a href="tel:+2305999888" className="inline-flex items-center space-x-2 bg-error text-white px-6 py-3 rounded-lg font-semibold hover:bg-error/90 transition-smooth">
+                <a
+                  href="tel:+2305999888"
+                  className="inline-flex items-center space-x-2 bg-error text-white px-6 py-3 rounded-lg font-semibold hover:bg-error/90 transition-smooth"
+                >
                   <Icon name="PhoneIcon" size={20} variant="solid" />
                   <span>+230 5 999 888</span>
                 </a>
