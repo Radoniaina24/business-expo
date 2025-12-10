@@ -15,7 +15,7 @@ const Header = ({ className = '' }: HeaderProps) => {
     { label: 'Home', href: '/homepage', icon: 'HomeIcon' },
     // { label: 'Event Overview', href: '/event-overview', icon: 'CalendarIcon' },
     // { label: 'Exhibitor Portal', href: '/exhibitor-portal', icon: 'BuildingStorefrontIcon' },
-    // { label: 'Visitor Registration', href: '/visitor-registration', icon: 'UserPlusIcon' },
+    { label: 'Visitor Registration', href: '/visitor-registration', icon: 'UserPlusIcon' },
     // { label: 'Business Matchmaking', href: '/business-matchmaking', icon: 'UsersIcon' },
   ];
 

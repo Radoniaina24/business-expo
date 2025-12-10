@@ -37,6 +37,7 @@ const VisitorRegistrationInteractive = () => {
 
   const handleRegistrationSubmit = (data: RegistrationFormData) => {
     if (!isHydrated) return;
+    console.log(data);
     setRegistrationData(data);
     setIsSubmitted(true);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -79,84 +80,104 @@ const VisitorRegistrationInteractive = () => {
             </div>
 
             <h1 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Registration Successful!
+              Inscription réussie !
             </h1>
 
             <p className="text-lg text-muted-foreground mb-8">
-              Welcome to the Madagascar-Africa Business Expo, {registrationData.firstName}!
+              Bienvenue à la Madagascar-Africa Business Expo, {registrationData.firstName} !
             </p>
 
             <div className="bg-muted/30 rounded-lg p-6 mb-8 text-left">
-              <h2 className="text-xl font-semibold text-foreground mb-4">Your Registration Details</h2>
+              <h2 className="text-xl font-semibold text-foreground mb-4">
+                Vos informations d&apos;inscription
+              </h2>
               <div className="space-y-3 text-sm">
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Visitor Type:</span>
-                  <span className="font-medium text-foreground capitalize">{registrationData.visitorType}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Name:</span>
-                  <span className="font-medium text-foreground">
-                    {registrationData.title} {registrationData.firstName} {registrationData.lastName}
+                  <span className="text-muted-foreground">Type de visiteur :</span>
+                  <span className="font-medium text-foreground capitalize">
+                    {registrationData.visitorType}
                   </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Email:</span>
+                  <span className="text-muted-foreground">Nom :</span>
+                  <span className="font-medium text-foreground">
+                    {registrationData.title} {registrationData.firstName}{' '}
+                    {registrationData.lastName}
+                  </span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">E-mail :</span>
                   <span className="font-medium text-foreground">{registrationData.email}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Company:</span>
+                  <span className="text-muted-foreground">Entreprise :</span>
                   <span className="font-medium text-foreground">{registrationData.company}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Selected Sessions:</span>
-                  <span className="font-medium text-foreground">{registrationData.sessions.length} sessions</span>
+                  <span className="text-muted-foreground">Sessions sélectionnées :</span>
+                  <span className="font-medium text-foreground">
+                    {registrationData.sessions.length} sessions
+                  </span>
                 </div>
               </div>
             </div>
 
             <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 mb-8">
               <div className="flex items-start space-x-3">
-                <Icon name="InformationCircleIcon" size={24} className="text-primary flex-shrink-0 mt-1" />
+                <Icon
+                  name="InformationCircleIcon"
+                  size={24}
+                  className="text-primary flex-shrink-0 mt-1"
+                />
                 <div className="text-left">
-                  <h3 className="font-semibold text-foreground mb-2">What's Next?</h3>
+                  <h3 className="font-semibold text-foreground mb-2">Prochaines étapes</h3>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li className="flex items-start">
                       <span className="mr-2">•</span>
-                      <span>Check your email for confirmation and QR code badge</span>
+                      <span>
+                        Consultez votre e-mail pour la confirmation et votre badge QR code
+                      </span>
+                    </li>
+                    {/* <li className="flex items-start">
+                      <span className="mr-2">•</span>
+                      <span>
+                        Téléchargez votre agenda personnalisé incluant vos sessions choisies
+                      </span>
+                    </li> */}
+                    {/* <li className="flex items-start">
+                      <span className="mr-2">•</span>
+                      <span>
+                        Accédez à la plateforme B2B de matchmaking pour planifier vos rendez-vous
+                      </span>
                     </li>
                     <li className="flex items-start">
                       <span className="mr-2">•</span>
-                      <span>Download your personalized agenda with selected sessions</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="mr-2">•</span>
-                      <span>Access the B2B matchmaking platform to schedule meetings</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="mr-2">•</span>
-                      <span>Review pre-event materials and exhibitor directory</span>
-                    </li>
+                      <span>
+                        Consultez les documents pré-événement et l&apos;annuaire des exposants
+                      </span>
+                    </li> */}
                   </ul>
                 </div>
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={handleDownloadAgenda}
                 className="px-6 py-3 text-sm font-semibold text-foreground border border-border rounded-lg hover:bg-muted transition-smooth"
               >
                 <Icon name="DocumentArrowDownIcon" size={18} className="inline mr-2" />
-                Download Agenda
+                Télécharger l&apos;agenda
               </button>
+
               <button
                 onClick={handleGoToMatchmaking}
                 className="px-6 py-3 text-sm font-semibold text-primary-foreground bg-primary rounded-lg hover:bg-primary/90 shadow-warm hover:shadow-warm-lg transition-smooth"
               >
                 <Icon name="UsersIcon" size={18} className="inline mr-2" />
-                Start Matchmaking
+                Démarrer le matchmaking
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -166,18 +187,21 @@ const VisitorRegistrationInteractive = () => {
   return (
     <div className="min-h-screen bg-background pt-16">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground py-12 lg:py-16">
+      {/* <section className="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground py-12 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <div className="flex items-center space-x-2 mb-4">
               <Icon name="UserPlusIcon" size={24} />
-              <span className="text-sm font-semibold uppercase tracking-wide">Visitor Registration</span>
+              <span className="text-sm font-semibold uppercase tracking-wide">
+                Visitor Registration
+              </span>
             </div>
             <h1 className="text-4xl lg:text-5xl font-bold mb-4">
               Join Africa's Premier Business Gathering
             </h1>
             <p className="text-lg lg:text-xl opacity-90 mb-6">
-              Register now to access exclusive networking opportunities, industry insights, and business connections that will transform your enterprise
+              Register now to access exclusive networking opportunities, industry insights, and
+              business connections that will transform your enterprise
             </p>
             <div className="flex flex-wrap gap-4 text-sm">
               <div className="flex items-center space-x-2">
@@ -187,6 +211,37 @@ const VisitorRegistrationInteractive = () => {
               <div className="flex items-center space-x-2">
                 <Icon name="MapPinIcon" size={18} />
                 <span>Swami Vivekananda International Convention Centre, Mauritius</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> */}
+
+      <section className="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground py-12 lg:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <div className="flex items-center space-x-2 mb-4">
+              <Icon name="UserPlusIcon" size={24} />
+              <span className="text-sm font-semibold uppercase tracking-wide">
+                Inscription des visiteurs
+              </span>
+            </div>
+            <h1 className="text-4xl lg:text-5xl font-bold mb-4">
+              Rejoignez le plus grand rassemblement d&apos;affaires en Afrique
+            </h1>
+            <p className="text-lg lg:text-xl opacity-90 mb-6">
+              Inscrivez-vous dès maintenant pour accéder à des opportunités exclusives de
+              réseautage, à des insights stratégiques et à des connexions professionnelles qui
+              transformeront votre entreprise.
+            </p>
+            <div className="flex flex-wrap gap-4 text-sm">
+              <div className="flex items-center space-x-2">
+                <Icon name="CalendarIcon" size={18} />
+                <span>15–16 Avril 2026</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Icon name="MapPinIcon" size={18} />
+                <span>Swami Vivekananda International Convention Centre, Maurice</span>
               </div>
             </div>
           </div>
@@ -201,7 +256,8 @@ const VisitorRegistrationInteractive = () => {
               Complete Your Registration
             </h2>
             <p className="text-muted-foreground">
-              Fill in your details to secure your spot at the expo. The process takes less than 5 minutes.
+              Fill in your details to secure your spot at the expo. The process takes less than 5
+              minutes.
             </p>
           </div>
 
@@ -213,13 +269,13 @@ const VisitorRegistrationInteractive = () => {
       <BenefitsSection />
 
       {/* Testimonials Section */}
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
 
       {/* FAQ Section */}
-      <FAQSection />
+      {/* <FAQSection /> */}
 
       {/* Trust Signals Section */}
-      <section className="py-12 lg:py-16 bg-background border-t border-border">
+      {/* <section className="py-12 lg:py-16 bg-background border-t border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-3">
@@ -249,7 +305,7 @@ const VisitorRegistrationInteractive = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };
