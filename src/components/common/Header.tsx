@@ -12,13 +12,12 @@ const Header = ({ className = '' }: HeaderProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navigationItems = [
-    { label: 'Home', href: '/homepage', icon: 'HomeIcon' },
-    // { label: 'Event Overview', href: '/event-overview', icon: 'CalendarIcon' },
-    // { label: 'Exhibitor Portal', href: '/exhibitor-portal', icon: 'BuildingStorefrontIcon' },
-    { label: 'Visitor Registration', href: '/visitor-registration', icon: 'UserPlusIcon' },
-    // { label: 'Business Matchmaking', href: '/business-matchmaking', icon: 'UsersIcon' },
+    { label: 'Accueil', href: '/homepage', icon: 'HomeIcon' },
+    // { label: 'Aperçu de l’événement', href: '/event-overview', icon: 'CalendarIcon' },
+    // { label: 'Portail exposants', href: '/exhibitor-portal', icon: 'BuildingStorefrontIcon' },
+    { label: 'Inscription visiteurs', href: '/visitor-registration', icon: 'UserPlusIcon' },
+    // { label: 'Matchmaking B2B', href: '/business-matchmaking', icon: 'UsersIcon' },
   ];
-
   const moreItems = [
     { label: 'Contact Support', href: '/contact-support', icon: 'ChatBubbleLeftRightIcon' }, //contact-support
   ];
