@@ -68,7 +68,7 @@ const Header = ({ className = '' }: HeaderProps) => {
               <div className="text-xs text-muted-foreground font-medium">Business Expo</div>
             </div> */}
             <div className="my-5">
-              <Image src={'/assets/images/logo.png'} alt="logo" width={200} height={2000} />
+              <Image src={'/assets/images/logo.png'} alt="logo" width={200} height={100} />
             </div>
           </Link>
 
