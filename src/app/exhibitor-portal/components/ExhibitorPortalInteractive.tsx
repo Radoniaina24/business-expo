@@ -54,10 +54,10 @@ const ExhibitorPortalInteractive = () => {
         { text: 'Enseigne personnalisée', included: false },
         { text: 'Mobilier premium', included: false },
         { text: 'Matchmaking B2B prioritaire', included: false },
-        { text: 'Session de formation', included: false }
+        { text: 'Session de formation', included: false },
       ],
       isPopular: false,
-      color: 'bg-muted'
+      color: 'bg-muted',
     },
     {
       id: 'premium',
@@ -77,10 +77,10 @@ const ExhibitorPortalInteractive = () => {
         { text: 'Matchmaking B2B prioritaire (10 rendez-vous)', included: true },
         { text: '1 session de formation incluse', included: true },
         { text: 'Kit marketing pré-événement', included: true },
-        { text: 'Rapport post-événement détaillé', included: true }
+        { text: 'Rapport post-événement détaillé', included: true },
       ],
       isPopular: true,
-      color: 'bg-primary'
+      color: 'bg-primary',
     },
     {
       id: 'elite',
@@ -103,11 +103,11 @@ const ExhibitorPortalInteractive = () => {
         { text: 'Rapport analytics avancé', included: true },
         { text: 'Espace réunion privé', included: true },
         { text: 'Service traiteur VIP', included: true },
-        { text: 'Couverture médiatique garantie', included: true }
+        { text: 'Couverture médiatique garantie', included: true },
       ],
       isPopular: false,
-      color: 'bg-accent'
-    }
+      color: 'bg-accent',
+    },
   ];
 
   const handleScrollToPackages = () => {
@@ -120,7 +120,9 @@ const ExhibitorPortalInteractive = () => {
     if (!isHydrated) return;
     setSelectedPackage(packageId);
     // In production, this would navigate to booking form
-    alert(`Vous avez sélectionné le forfait ${packages.find(p => p.id === packageId)?.name}. Redirection vers le formulaire de réservation...`);
+    alert(
+      `Vous avez sélectionné le forfait ${packages.find((p) => p.id === packageId)?.name}. Redirection vers le formulaire de réservation...`
+    );
   };
 
   const handleOpenVisualizer = (packageName: string) => {
@@ -168,7 +170,8 @@ const ExhibitorPortalInteractive = () => {
               Choisissez Votre Forfait Idéal
             </h2>
             <p className="text-lg text-muted-foreground">
-              Des solutions adaptées à chaque étape de votre croissance. Tous les forfaits incluent l&apos;accès complet à l&apos;événement.
+              Des solutions adaptées à chaque étape de votre croissance. Tous les forfaits incluent
+              l&apos;accès complet à l&apos;événement.
             </p>
           </div>
 
@@ -191,12 +194,18 @@ const ExhibitorPortalInteractive = () => {
 
           {/* Visualizer CTA */}
           <div className="bg-gradient-to-r from-accent/10 to-warning/10 border border-accent/20 rounded-2xl p-8 text-center">
-            <Icon name="CubeTransparentIcon" size={48} variant="outline" className="text-accent mx-auto mb-4" />
+            <Icon
+              name="CubeTransparentIcon"
+              size={48}
+              variant="outline"
+              className="text-accent mx-auto mb-4"
+            />
             <h3 className="text-2xl font-bold text-foreground mb-3">
               Visualisez Votre Stand en 3D
             </h3>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Découvrez à quoi ressemblera votre espace d&apos;exposition avec notre visualiseur interactif 3D.
+              Découvrez à quoi ressemblera votre espace d&apos;exposition avec notre visualiseur
+              interactif 3D.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               {packages.map((pkg) => (
@@ -221,7 +230,7 @@ const ExhibitorPortalInteractive = () => {
       <FAQSection />
 
       {/* Footer */}
-      <FooterSection />
+      {/* <FooterSection /> */}
 
       {/* Booth Visualizer Modal */}
       <BoothVisualizerModal

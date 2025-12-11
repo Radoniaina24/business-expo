@@ -14,14 +14,15 @@ const Header = ({ className = '' }: HeaderProps) => {
 
   const navigationItems = [
     { label: 'Accueil', href: '/homepage', icon: 'HomeIcon' },
+    { label: 'Contacter le support', href: '/contact-support', icon: 'ChatBubbleLeftRightIcon' },
     // { label: 'Aperçu de l’événement', href: '/event-overview', icon: 'CalendarIcon' },
     // { label: 'Portail exposants', href: '/exhibitor-portal', icon: 'BuildingStorefrontIcon' },
-    { label: 'Inscription visiteurs', href: '/visitor-registration', icon: 'UserPlusIcon' },
+    // { label: 'Inscription visiteurs', href: '/visitor-registration', icon: 'UserPlusIcon' },
     // { label: 'Matchmaking B2B', href: '/business-matchmaking', icon: 'UsersIcon' },
   ];
-  const moreItems = [
-    { label: 'Contact Support', href: '/contact-support', icon: 'ChatBubbleLeftRightIcon' }, //contact-support
-  ];
+  // const moreItems = [
+  //   { label: 'Contacter le support', href: '/contact-support', icon: 'ChatBubbleLeftRightIcon' }, //contact-support
+  // ];
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -85,7 +86,7 @@ const Header = ({ className = '' }: HeaderProps) => {
             ))}
 
             {/* More Dropdown */}
-            <div className="relative group">
+            {/* <div className="relative group">
               <button className="flex items-center space-x-2 px-4 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-muted rounded-lg transition-smooth">
                 <Icon name="EllipsisHorizontalIcon" size={18} variant="outline" />
                 <span>More</span>
@@ -103,24 +104,24 @@ const Header = ({ className = '' }: HeaderProps) => {
                   </Link>
                 ))}
               </div>
-            </div>
+            </div> */}
           </nav>
 
           {/* CTA Buttons */}
-          {/* <div className="hidden lg:flex items-center space-x-3">
+          <div className="hidden lg:flex items-center space-x-3">
             <Link
               href="/visitor-registration"
-              className="px-4 py-2 text-sm font-semibold text-foreground border border-border rounded-lg hover:bg-muted transition-smooth"
+              className="px-4 py-2 text-sm flex gap-2 items-center font-semibold text-primary-foreground bg-primary rounded-lg hover:bg-primary/90 shadow-warm hover:shadow-warm-lg transition-smooth"
             >
-              Register as Visitor
+              <Icon name={'UserPlusIcon'} size={18} variant="outline" /> Inscription
             </Link>
-            <Link
+            {/* <Link
               href="/exhibitor-portal"
               className="px-4 py-2 text-sm font-semibold text-primary-foreground bg-primary rounded-lg hover:bg-primary/90 shadow-warm hover:shadow-warm-lg transition-smooth"
             >
               Become an Exhibitor
-            </Link>
-          </div> */}
+            </Link> */}
+          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -137,34 +138,47 @@ const Header = ({ className = '' }: HeaderProps) => {
       {isMobileMenuOpen && (
         <div className="lg:hidden border-t border-border bg-card">
           <nav className="px-4 py-4 space-y-1">
-            {[...navigationItems, ...moreItems].map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center space-x-3 px-4 py-3 text-sm font-medium text-foreground hover:text-primary hover:bg-muted rounded-lg transition-smooth"
-              >
-                <Icon name={item.icon as any} size={20} variant="outline" />
-                <span>{item.label}</span>
-              </Link>
-            ))}
+            {[...navigationItems].map(
+              (
+                item // ...moreItems
+              ) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex items-center space-x-3 px-4 py-3 text-sm font-medium text-foreground hover:text-primary hover:bg-muted rounded-lg transition-smooth"
+                >
+                  <Icon name={item.icon as any} size={20} variant="outline" />
+                  <span>{item.label}</span>
+                </Link>
+              )
+            )}
 
-            {/* <div className="pt-4 space-y-2 border-t border-border mt-4">
-              <Link
+            <div className="pt-4 space-y-2 border-t border-border mt-4">
+              {/* <Link
                 href="/visitor-registration"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="block w-full px-4 py-3 text-sm font-semibold text-center text-foreground border border-border rounded-lg hover:bg-muted transition-smooth"
               >
                 Register as Visitor
-              </Link>
+              </Link> */}
+
               <Link
+                href="/visitor-registration"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="  w-full px-4 py-2 text-sm flex gap-2 items-center font-semibold text-primary-foreground bg-primary rounded-lg hover:bg-primary/90 shadow-warm hover:shadow-warm-lg transition-smooth"
+              >
+                <Icon name={'UserPlusIcon'} size={18} variant="outline" /> Inscription
+              </Link>
+
+              {/* <Link
                 href="/exhibitor-portal"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="block w-full px-4 py-3 text-sm font-semibold text-center text-primary-foreground bg-primary rounded-lg hover:bg-primary/90 shadow-warm transition-smooth"
               >
                 Become an Exhibitor
-              </Link>
-            </div> */}
+              </Link> */}
+            </div>
           </nav>
         </div>
       )}
