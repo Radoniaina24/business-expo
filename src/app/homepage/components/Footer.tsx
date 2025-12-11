@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Icon from '@/components/ui/AppIcon';
+import Image from 'next/image';
 
 const Footer = () => {
   const [isHydrated, setIsHydrated] = useState(false);
@@ -69,7 +70,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-3 mb-6">
+            {/* <div className="flex items-center space-x-3 mb-6">
               <div className="relative w-12 h-12 flex items-center justify-center bg-primary rounded-lg">
                 <svg
                   viewBox="0 0 40 40"
@@ -96,6 +97,15 @@ const Footer = () => {
                 <div className="text-xl font-bold leading-tight">Madagascar Africa</div>
                 <div className="text-sm text-white/70">Business Expo</div>
               </div>
+            </div> */}
+            <div className="mb-6">
+              <Image
+                src={'/assets/images/footer-logo.jpg'}
+                className="rounded-lg"
+                alt="logo"
+                width={250}
+                height={250}
+              />
             </div>
 
             <p className="text-white/70 leading-relaxed mb-6">

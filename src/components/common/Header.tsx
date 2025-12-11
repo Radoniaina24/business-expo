@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Icon from '@/components/ui/AppIcon';
+import Image from 'next/image';
 
 interface HeaderProps {
   className?: string;
@@ -37,7 +38,7 @@ const Header = ({ className = '' }: HeaderProps) => {
             href="/homepage"
             className="flex items-center space-x-3 hover:opacity-90 transition-smooth"
           >
-            <div className="relative w-10 h-10 flex items-center justify-center bg-primary rounded-lg">
+            {/* <div className="relative w-10 h-10 flex items-center justify-center bg-primary rounded-lg">
               <svg
                 viewBox="0 0 40 40"
                 fill="none"
@@ -64,6 +65,9 @@ const Header = ({ className = '' }: HeaderProps) => {
                 Madagascar Africa
               </div>
               <div className="text-xs text-muted-foreground font-medium">Business Expo</div>
+            </div> */}
+            <div className="my-5">
+              <Image src={'/assets/images/logo.png'} alt="logo" width={200} height={2000} />
             </div>
           </Link>
 
