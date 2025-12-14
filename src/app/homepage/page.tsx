@@ -25,10 +25,10 @@ export default function HomePage() {
         <HeroSection expoDate={expoDate} />
         {/* <QuickAccessCards /> */}
         <WhyMauritiusSection />
-        <InteractiveMap />
+        {/* <InteractiveMap /> */}
         <KeyHighlights />
-        <RegistrationStats />
-        <PartnersSection />
+        {/* <RegistrationStats /> */}
+        {/* <PartnersSection /> */}
       </main>
       {/* <Footer /> */}
     </>
