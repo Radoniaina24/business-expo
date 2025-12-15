@@ -44,7 +44,7 @@ export function TableRow({ data, onView, onEdit, onDelete }: TableRowProps) {
           </div>
           <div className="ml-4">
             <div className="text-sm font-medium text-gray-900 dark:text-white">
-              {data.title} {data.firstName} {data.lastName}
+              {data.firstName} {data.lastName}
             </div>
             <div className="text-sm text-gray-500 dark:text-gray-400">{data.email}</div>
           </div>

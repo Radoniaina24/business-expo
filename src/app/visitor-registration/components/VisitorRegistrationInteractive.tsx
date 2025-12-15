@@ -7,6 +7,7 @@ import RegistrationForm from './RegistrationForm';
 import BenefitsSection from './BenefitsSection';
 import TestimonialsSection from './TestimonialsSection';
 import FAQSection from './FAQSection';
+import { useCreateExpoMutation } from '@/redux/api/expoApi';
 
 interface RegistrationFormData {
   visitorType: string;
@@ -32,13 +33,18 @@ const VisitorRegistrationInteractive = () => {
   useEffect(() => {
     setIsHydrated(true);
   }, []);
-
-  const handleRegistrationSubmit = (data: RegistrationFormData) => {
-    if (!isHydrated) return;
-    console.log(data);
-    setRegistrationData(data);
-    setIsSubmitted(true);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  const [createExpo] = useCreateExpoMutation();
+  const handleRegistrationSubmit = async (data: RegistrationFormData) => {
+   
+    try {
+      if (!isHydrated) return;
+      setRegistrationData(data);
+      await createExpo(data).unwrap()
+      setIsSubmitted(true);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   if (!isHydrated) {
@@ -103,7 +109,7 @@ const VisitorRegistrationInteractive = () => {
               </div>
             </div>
 
-            <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 mb-8">
+            {/* <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 mb-8">
               <div className="flex items-start space-x-3">
                 <Icon
                   name="InformationCircleIcon"
@@ -122,7 +128,7 @@ const VisitorRegistrationInteractive = () => {
                   </ul>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

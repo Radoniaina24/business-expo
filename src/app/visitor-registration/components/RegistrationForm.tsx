@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Icon from '@/components/ui/AppIcon';
-import { useCreateExpoMutation } from '@/redux/api/expoApi';
+
 
 interface RegistrationFormData {
   visitorType: string;
@@ -59,7 +59,7 @@ const RegistrationForm = ({ onSubmit }: RegistrationFormProps) => {
     newsletter: false,
     terms: false,
   });
-  const [createExpo] = useCreateExpoMutation();
+  
   useEffect(() => {
     setIsHydrated(true);
   }, []);
@@ -106,9 +106,7 @@ const RegistrationForm = ({ onSubmit }: RegistrationFormProps) => {
     try {
       e.preventDefault();
       if (!isHydrated) return;
-      const res = await createExpo(formData).unwrap();
-      // console.log(formData);
-      // onSubmit(formData);
+       onSubmit(formData);
     } catch (error) {
       console.log(error);
     }
@@ -229,15 +227,17 @@ const RegistrationForm = ({ onSubmit }: RegistrationFormProps) => {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <select
               value={formData.title}
+              required
               onChange={(e) => handleInputChange('title', e.target.value)}
-              className="px-4 py-3 border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-ring bg-background text-foreground"
+              className="px-4 py-3 border border-input rounded-lg placeholder:Civilité focus:outline-none focus:ring-2 focus:ring-ring bg-background text-foreground"
             >
-              <option value="">Civilité</option>
+              
               <option value="mr">M.</option>
               <option value="mrs">Mme</option>
               <option value="ms">Mlle</option>
               <option value="dr">Dr</option>
               <option value="prof">Prof.</option>
+              
             </select>
 
             <input
