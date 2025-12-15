@@ -19,8 +19,6 @@ interface RegistrationFormData {
   company: string;
   position: string;
   industry: string;
-  interests: string[];
-  sessions: string[];
   newsletter: boolean;
   terms: boolean;
 }
@@ -41,17 +39,6 @@ const VisitorRegistrationInteractive = () => {
     setRegistrationData(data);
     setIsSubmitted(true);
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const handleDownloadAgenda = () => {
-    if (!isHydrated) return;
-    // Mock download functionality
-    alert('Your personalized agenda has been sent to your email address.');
-  };
-
-  const handleGoToMatchmaking = () => {
-    if (!isHydrated) return;
-    router.push('/business-matchmaking');
   };
 
   if (!isHydrated) {
@@ -113,12 +100,6 @@ const VisitorRegistrationInteractive = () => {
                   <span className="text-muted-foreground">Entreprise :</span>
                   <span className="font-medium text-foreground">{registrationData.company}</span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Sessions sélectionnées :</span>
-                  <span className="font-medium text-foreground">
-                    {registrationData.sessions.length} sessions
-                  </span>
-                </div>
               </div>
             </div>
 
@@ -138,46 +119,10 @@ const VisitorRegistrationInteractive = () => {
                         Consultez votre e-mail pour la confirmation et votre badge QR code
                       </span>
                     </li>
-                    {/* <li className="flex items-start">
-                      <span className="mr-2">•</span>
-                      <span>
-                        Téléchargez votre agenda personnalisé incluant vos sessions choisies
-                      </span>
-                    </li> */}
-                    {/* <li className="flex items-start">
-                      <span className="mr-2">•</span>
-                      <span>
-                        Accédez à la plateforme B2B de matchmaking pour planifier vos rendez-vous
-                      </span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="mr-2">•</span>
-                      <span>
-                        Consultez les documents pré-événement et l&apos;annuaire des exposants
-                      </span>
-                    </li> */}
                   </ul>
                 </div>
               </div>
             </div>
-
-            {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                onClick={handleDownloadAgenda}
-                className="px-6 py-3 text-sm font-semibold text-foreground border border-border rounded-lg hover:bg-muted transition-smooth"
-              >
-                <Icon name="DocumentArrowDownIcon" size={18} className="inline mr-2" />
-                Télécharger l&apos;agenda
-              </button>
-
-              <button
-                onClick={handleGoToMatchmaking}
-                className="px-6 py-3 text-sm font-semibold text-primary-foreground bg-primary rounded-lg hover:bg-primary/90 shadow-warm hover:shadow-warm-lg transition-smooth"
-              >
-                <Icon name="UsersIcon" size={18} className="inline mr-2" />
-                Démarrer le matchmaking
-              </button>
-            </div> */}
           </div>
         </div>
       </div>
@@ -186,37 +131,6 @@ const VisitorRegistrationInteractive = () => {
 
   return (
     <div className="min-h-screen bg-background pt-16">
-      {/* Hero Section */}
-      {/* <section className="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground py-12 lg:py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <div className="flex items-center space-x-2 mb-4">
-              <Icon name="UserPlusIcon" size={24} />
-              <span className="text-sm font-semibold uppercase tracking-wide">
-                Visitor Registration
-              </span>
-            </div>
-            <h1 className="text-4xl lg:text-5xl font-bold mb-4">
-              Join Africa's Premier Business Gathering
-            </h1>
-            <p className="text-lg lg:text-xl opacity-90 mb-6">
-              Register now to access exclusive networking opportunities, industry insights, and
-              business connections that will transform your enterprise
-            </p>
-            <div className="flex flex-wrap gap-4 text-sm">
-              <div className="flex items-center space-x-2">
-                <Icon name="CalendarIcon" size={18} />
-                <span>15-16 March 2025</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Icon name="MapPinIcon" size={18} />
-                <span>Swami Vivekananda International Convention Centre, Mauritius</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
       <section className="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground py-12 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
@@ -267,45 +181,6 @@ const VisitorRegistrationInteractive = () => {
 
       {/* Benefits Section */}
       <BenefitsSection />
-
-      {/* Testimonials Section */}
-      {/* <TestimonialsSection /> */}
-
-      {/* FAQ Section */}
-      {/* <FAQSection /> */}
-
-      {/* Trust Signals Section */}
-      {/* <section className="py-12 lg:py-16 bg-background border-t border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-3">
-              Trusted by Leading Organizations
-            </h2>
-            <p className="text-muted-foreground">
-              Endorsed by government bodies and international trade organizations
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-60">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-foreground">500+</div>
-              <div className="text-sm text-muted-foreground mt-1">Exhibitors</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-foreground">5,000+</div>
-              <div className="text-sm text-muted-foreground mt-1">Visitors</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-foreground">30+</div>
-              <div className="text-sm text-muted-foreground mt-1">Countries</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-foreground">€50M+</div>
-              <div className="text-sm text-muted-foreground mt-1">Deals Facilitated</div>
-            </div>
-          </div>
-        </div>
-      </section> */}
     </div>
   );
 };
