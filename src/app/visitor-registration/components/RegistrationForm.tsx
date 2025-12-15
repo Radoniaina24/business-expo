@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Icon from '@/components/ui/AppIcon';
+import { useCreateExpoMutation } from '@/redux/api/expoApi';
 
 interface RegistrationFormData {
   visitorType: string;
@@ -58,7 +59,7 @@ const RegistrationForm = ({ onSubmit }: RegistrationFormProps) => {
     newsletter: false,
     terms: false,
   });
-
+  const [createExpo] = useCreateExpoMutation();
   useEffect(() => {
     setIsHydrated(true);
   }, []);
@@ -101,11 +102,16 @@ const RegistrationForm = ({ onSubmit }: RegistrationFormProps) => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!isHydrated) return;
-    console.log(formData);
-    onSubmit(formData);
+  const handleSubmit = async (e: React.FormEvent) => {
+    try {
+      e.preventDefault();
+      if (!isHydrated) return;
+      const res = await createExpo(formData).unwrap();
+      // console.log(formData);
+      // onSubmit(formData);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const isStepValid = () => {
