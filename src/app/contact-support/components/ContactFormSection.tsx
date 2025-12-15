@@ -34,7 +34,7 @@ const ContactFormSection = ({ className = '' }: ContactFormSectionProps) => {
     subject: '',
     message: '',
     preferredContact: 'email',
-    language: 'fr'
+    language: 'fr',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -66,19 +66,31 @@ const ContactFormSection = ({ className = '' }: ContactFormSectionProps) => {
     { value: 'visitor', label: 'Inscription Visiteur' },
     { value: 'partnership', label: 'Opportunités de Partenariat' },
     { value: 'media', label: 'Demande Média' },
-    { value: 'investment', label: 'Opportunités d\'Investissement' },
+    { value: 'investment', label: "Opportunités d'Investissement" },
     { value: 'technical', label: 'Support Technique' },
-    { value: 'other', label: 'Autre' }
+    { value: 'other', label: 'Autre' },
   ];
 
   const countries = [
-    'Madagascar', 'Maurice', 'Afrique du Sud', 'Kenya', 'Nigeria', 'Ghana', 
-    'Côte d\'Ivoire', 'Sénégal', 'Tanzanie', 'Ouganda', 'Rwanda', 'Autre'
+    'Madagascar',
+    'Maurice',
+    'Afrique du Sud',
+    'Kenya',
+    'Nigeria',
+    'Ghana',
+    "Côte d'Ivoire",
+    'Sénégal',
+    'Tanzanie',
+    'Ouganda',
+    'Rwanda',
+    'Autre',
   ];
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -87,7 +99,7 @@ const ContactFormSection = ({ className = '' }: ContactFormSectionProps) => {
     setSubmitStatus('idle');
 
     // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    await new Promise((resolve) => setTimeout(resolve, 2000));
 
     setIsSubmitting(false);
     setSubmitStatus('success');
@@ -105,7 +117,7 @@ const ContactFormSection = ({ className = '' }: ContactFormSectionProps) => {
         subject: '',
         message: '',
         preferredContact: 'email',
-        language: 'fr'
+        language: 'fr',
       });
       setSubmitStatus('idle');
     }, 3000);
@@ -134,7 +146,10 @@ const ContactFormSection = ({ className = '' }: ContactFormSectionProps) => {
             {/* Name Fields */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="firstName" className="block text-sm font-semibold text-foreground mb-2">
+                <label
+                  htmlFor="firstName"
+                  className="block text-sm font-semibold text-foreground mb-2"
+                >
                   Prénom <span className="text-error">*</span>
                 </label>
                 <input
@@ -150,7 +165,10 @@ const ContactFormSection = ({ className = '' }: ContactFormSectionProps) => {
               </div>
 
               <div>
-                <label htmlFor="lastName" className="block text-sm font-semibold text-foreground mb-2">
+                <label
+                  htmlFor="lastName"
+                  className="block text-sm font-semibold text-foreground mb-2"
+                >
                   Nom <span className="text-error">*</span>
                 </label>
                 <input
@@ -204,7 +222,10 @@ const ContactFormSection = ({ className = '' }: ContactFormSectionProps) => {
             {/* Company and Country */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="company" className="block text-sm font-semibold text-foreground mb-2">
+                <label
+                  htmlFor="company"
+                  className="block text-sm font-semibold text-foreground mb-2"
+                >
                   Entreprise
                 </label>
                 <input
@@ -219,7 +240,10 @@ const ContactFormSection = ({ className = '' }: ContactFormSectionProps) => {
               </div>
 
               <div>
-                <label htmlFor="country" className="block text-sm font-semibold text-foreground mb-2">
+                <label
+                  htmlFor="country"
+                  className="block text-sm font-semibold text-foreground mb-2"
+                >
                   Pays <span className="text-error">*</span>
                 </label>
                 <select
@@ -231,8 +255,10 @@ const ContactFormSection = ({ className = '' }: ContactFormSectionProps) => {
                   className="w-full px-4 py-3 border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth bg-card"
                 >
                   <option value="">Sélectionnez un pays</option>
-                  {countries.map(country => (
-                    <option key={country} value={country}>{country}</option>
+                  {countries.map((country) => (
+                    <option key={country} value={country}>
+                      {country}
+                    </option>
                   ))}
                 </select>
               </div>
@@ -240,7 +266,10 @@ const ContactFormSection = ({ className = '' }: ContactFormSectionProps) => {
 
             {/* Inquiry Type */}
             <div>
-              <label htmlFor="inquiryType" className="block text-sm font-semibold text-foreground mb-2">
+              <label
+                htmlFor="inquiryType"
+                className="block text-sm font-semibold text-foreground mb-2"
+              >
                 Type de Demande <span className="text-error">*</span>
               </label>
               <select
@@ -252,8 +281,10 @@ const ContactFormSection = ({ className = '' }: ContactFormSectionProps) => {
                 className="w-full px-4 py-3 border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth bg-card"
               >
                 <option value="">Sélectionnez un type</option>
-                {inquiryTypes.map(type => (
-                  <option key={type.value} value={type.value}>{type.label}</option>
+                {inquiryTypes.map((type) => (
+                  <option key={type.value} value={type.value}>
+                    {type.label}
+                  </option>
                 ))}
               </select>
             </div>
@@ -346,7 +377,12 @@ const ContactFormSection = ({ className = '' }: ContactFormSectionProps) => {
               >
                 {isSubmitting ? (
                   <>
-                    <Icon name="ArrowPathIcon" size={20} variant="outline" className="animate-spin" />
+                    <Icon
+                      name="ArrowPathIcon"
+                      size={20}
+                      variant="outline"
+                      className="animate-spin"
+                    />
                     <span>Envoi en cours...</span>
                   </>
                 ) : (
@@ -361,11 +397,19 @@ const ContactFormSection = ({ className = '' }: ContactFormSectionProps) => {
             {/* Success Message */}
             {submitStatus === 'success' && (
               <div className="bg-success/10 border border-success/20 rounded-lg p-4 flex items-start space-x-3">
-                <Icon name="CheckCircleIcon" size={24} variant="solid" className="text-success flex-shrink-0" />
+                <Icon
+                  name="CheckCircleIcon"
+                  size={24}
+                  variant="solid"
+                  className="text-success flex-shrink-0"
+                />
                 <div>
-                  <h4 className="font-semibold text-foreground mb-1">Message Envoyé avec Succès!</h4>
+                  <h4 className="font-semibold text-foreground mb-1">
+                    Message Envoyé avec Succès!
+                  </h4>
                   <p className="text-sm text-muted-foreground">
-                    Nous avons bien reçu votre message et nous vous répondrons dans les plus brefs délais.
+                    Nous avons bien reçu votre message et nous vous répondrons dans les plus brefs
+                    délais.
                   </p>
                 </div>
               </div>
@@ -376,13 +420,20 @@ const ContactFormSection = ({ className = '' }: ContactFormSectionProps) => {
         {/* Additional Info */}
         <div className="mt-8 bg-card border border-border rounded-xl p-6">
           <div className="flex items-start space-x-3">
-            <Icon name="InformationCircleIcon" size={24} variant="solid" className="text-primary flex-shrink-0" />
+            <Icon
+              name="InformationCircleIcon"
+              size={24}
+              variant="solid"
+              className="text-primary flex-shrink-0"
+            />
             <div>
               <h4 className="font-semibold text-foreground mb-2">Informations Importantes</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start space-x-2">
                   <span className="text-primary mt-1">•</span>
-                  <span>Nous répondons généralement dans les 2 heures pendant les heures de bureau</span>
+                  <span>
+                    Nous répondons généralement dans les 2 heures pendant les heures de bureau
+                  </span>
                 </li>
                 <li className="flex items-start space-x-2">
                   <span className="text-primary mt-1">•</span>
@@ -390,7 +441,9 @@ const ContactFormSection = ({ className = '' }: ContactFormSectionProps) => {
                 </li>
                 <li className="flex items-start space-x-2">
                   <span className="text-primary mt-1">•</span>
-                  <span>Vos informations sont protégées et ne seront jamais partagées avec des tiers</span>
+                  <span>
+                    Vos informations sont protégées et ne seront jamais partagées avec des tiers
+                  </span>
                 </li>
               </ul>
             </div>

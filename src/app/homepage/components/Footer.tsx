@@ -70,34 +70,6 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            {/* <div className="flex items-center space-x-3 mb-6">
-              <div className="relative w-12 h-12 flex items-center justify-center bg-primary rounded-lg">
-                <svg
-                  viewBox="0 0 40 40"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-10 h-10"
-                >
-                  <path
-                    d="M20 5L8 12V28L20 35L32 28V12L20 5Z"
-                    stroke="white"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M20 5V35M8 12L32 28M32 12L8 28"
-                    stroke="white"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </div>
-              <div>
-                <div className="text-xl font-bold leading-tight">Madagascar Africa</div>
-                <div className="text-sm text-white/70">Business Expo</div>
-              </div>
-            </div> */}
             <div className="mb-6">
               <Image
                 src={'/assets/images/footer-logo.jpg'}
@@ -112,19 +84,6 @@ const Footer = () => {
               Le plus grand événement business de l'océan Indien, connectant Madagascar, l'Afrique
               et Maurice pour créer des opportunités sans précédent.
             </p>
-
-            {/* <div className="flex space-x-4">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  className="w-10 h-10 flex items-center justify-center bg-white/10 rounded-lg hover:bg-primary transition-confident"
-                  aria-label={social.name}
-                >
-                  <Icon name={social.icon as any} size={20} variant="outline" />
-                </a>
-              ))}
-            </div> */}
           </div>
 
           {/* Links Sections */}
