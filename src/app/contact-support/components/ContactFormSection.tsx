@@ -10,7 +10,7 @@ interface FormData {
   phone: string;
   company: string;
   country: string;
-  inquiryType: string;
+  // inquiryType: string;
   subject: string;
   message: string;
   preferredContact: string;
@@ -30,7 +30,7 @@ const ContactFormSection = ({ className = '' }: ContactFormSectionProps) => {
     phone: '',
     company: '',
     country: '',
-    inquiryType: '',
+    // inquiryType: '',
     subject: '',
     message: '',
     preferredContact: 'email',
@@ -61,31 +61,6 @@ const ContactFormSection = ({ className = '' }: ContactFormSectionProps) => {
     );
   }
 
-  const inquiryTypes = [
-    { value: 'exhibitor', label: 'Informations Exposant' },
-    { value: 'visitor', label: 'Inscription Visiteur' },
-    { value: 'partnership', label: 'Opportunités de Partenariat' },
-    { value: 'media', label: 'Demande Média' },
-    { value: 'investment', label: "Opportunités d'Investissement" },
-    { value: 'technical', label: 'Support Technique' },
-    { value: 'other', label: 'Autre' },
-  ];
-
-  const countries = [
-    'Madagascar',
-    'Maurice',
-    'Afrique du Sud',
-    'Kenya',
-    'Nigeria',
-    'Ghana',
-    "Côte d'Ivoire",
-    'Sénégal',
-    'Tanzanie',
-    'Ouganda',
-    'Rwanda',
-    'Autre',
-  ];
-
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
@@ -98,29 +73,54 @@ const ContactFormSection = ({ className = '' }: ContactFormSectionProps) => {
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-
-    setIsSubmitting(false);
-    setSubmitStatus('success');
-
-    // Reset form after success
-    setTimeout(() => {
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        company: '',
-        country: '',
-        inquiryType: '',
-        subject: '',
-        message: '',
-        preferredContact: 'email',
-        language: 'fr',
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          country: formData.country,
+          subject: formData.subject,
+          message: formData.message,
+          preferredContact: formData.preferredContact,
+          language: formData.language,
+        }),
       });
-      setSubmitStatus('idle');
-    }, 3000);
+
+      const result = await response.json();
+      // console.log(result);
+      if (response.ok && result.success) {
+        setSubmitStatus('success');
+
+        // Reset form after success
+        setTimeout(() => {
+          setFormData({
+            firstName: '',
+            lastName: '',
+            email: '',
+            phone: '',
+            company: '',
+            country: '',
+            subject: '',
+            message: '',
+            preferredContact: 'email',
+            language: 'fr',
+          });
+          setSubmitStatus('idle');
+        }, 3000);
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error("Erreur lors de l'envoi:", error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -226,7 +226,7 @@ const ContactFormSection = ({ className = '' }: ContactFormSectionProps) => {
                   htmlFor="company"
                   className="block text-sm font-semibold text-foreground mb-2"
                 >
-                  Entreprise
+                  Entreprise <span className="text-error">*</span>
                 </label>
                 <input
                   type="text"
@@ -236,6 +236,7 @@ const ContactFormSection = ({ className = '' }: ContactFormSectionProps) => {
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth"
                   placeholder="Nom de votre entreprise"
+                  required
                 />
               </div>
 
@@ -246,47 +247,18 @@ const ContactFormSection = ({ className = '' }: ContactFormSectionProps) => {
                 >
                   Pays <span className="text-error">*</span>
                 </label>
-                <select
+
+                <input
+                  type="text"
                   id="country"
                   name="country"
                   value={formData.country}
                   onChange={handleInputChange}
+                  className="w-full px-4 py-3 border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth"
+                  placeholder="Nom du pays"
                   required
-                  className="w-full px-4 py-3 border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth bg-card"
-                >
-                  <option value="">Sélectionnez un pays</option>
-                  {countries.map((country) => (
-                    <option key={country} value={country}>
-                      {country}
-                    </option>
-                  ))}
-                </select>
+                />
               </div>
-            </div>
-
-            {/* Inquiry Type */}
-            <div>
-              <label
-                htmlFor="inquiryType"
-                className="block text-sm font-semibold text-foreground mb-2"
-              >
-                Type de Demande <span className="text-error">*</span>
-              </label>
-              <select
-                id="inquiryType"
-                name="inquiryType"
-                value={formData.inquiryType}
-                onChange={handleInputChange}
-                required
-                className="w-full px-4 py-3 border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth bg-card"
-              >
-                <option value="">Sélectionnez un type</option>
-                {inquiryTypes.map((type) => (
-                  <option key={type.value} value={type.value}>
-                    {type.label}
-                  </option>
-                ))}
-              </select>
             </div>
 
             {/* Subject */}
@@ -314,6 +286,7 @@ const ContactFormSection = ({ className = '' }: ContactFormSectionProps) => {
               <textarea
                 id="message"
                 name="message"
+                minLength={50}
                 value={formData.message}
                 onChange={handleInputChange}
                 required
