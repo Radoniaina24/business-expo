@@ -35,7 +35,7 @@ export default function HomePage() {
         <Banner />
         <Hero />
         <About />
-        {/* <WhyExhibit /> */}
+        <WhyExhibit />
         {/* <GlobalReach /> */}
         {/* <Sectors /> */}
         {/* <Program /> */}

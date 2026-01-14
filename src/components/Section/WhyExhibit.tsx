@@ -116,7 +116,7 @@ export default function WhyExhibit() {
               <span className="text-success-400">business to Africa and beyond</span>
             </h3>
 
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
+            {/* <div className="flex flex-wrap justify-center gap-4 mb-8">
               {['15,000+ Visitors', '500+ Exhibitors', '50+ Countries'].map((stat, index) => (
                 <div
                   key={index}
@@ -126,12 +126,12 @@ export default function WhyExhibit() {
                   <span className="text-white font-medium">{stat}</span>
                 </div>
               ))}
-            </div>
+            </div> */}
 
-            <button className="group bg-success-500 hover:bg-success-600 text-white font-bold py-4 px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center space-x-2">
+            {/* <button className="group bg-success-500 hover:bg-success-600 text-white font-bold py-4 px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center space-x-2">
               <span>Secure Your Booth Now</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
