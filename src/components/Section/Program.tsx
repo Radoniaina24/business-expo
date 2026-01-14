@@ -103,13 +103,13 @@ export default function Program() {
                     key={eventIndex}
                     className="flex items-start space-x-4 p-4 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors"
                   >
-                    <div className="flex-shrink-0">
+                    {/* <div className="flex-shrink-0">
                       <span
                         className={`inline-block px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r ${day.color} text-white`}
                       >
                         {event.time}
                       </span>
-                    </div>
+                    </div> */}
                     <div className="flex-1">
                       <div className="flex items-center space-x-2">
                         <event.icon className="w-4 h-4 text-gray-400" />
@@ -121,14 +121,6 @@ export default function Program() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Download Schedule */}
-        <div className="mt-12 text-center">
-          <button className="inline-flex items-center space-x-2 bg-white shadow-lg hover:shadow-xl rounded-full px-8 py-4 text-primary-600 font-semibold transition-all duration-300 hover:-translate-y-1">
-            <Calendar className="w-5 h-5" />
-            <span>Download Full Program</span>
-          </button>
         </div>
       </div>
     </section>

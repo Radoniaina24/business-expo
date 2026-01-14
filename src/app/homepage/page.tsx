@@ -38,7 +38,7 @@ export default function HomePage() {
         <WhyExhibit />
         <GlobalReach />
         <Sectors />
-        {/* <Program /> */}
+        <Program />
         {/* <Organizer /> */}
         {/* <Contact /> */}
         {/* <QuickAccessCards /> */}
