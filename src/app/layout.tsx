@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/index.css';
-import Footer from './homepage/components/Footer';
+
 import { ReduxProvider } from '@/redux/provider';
 import { ToastProvider } from '@/context/ToastContext';
 
@@ -10,7 +10,7 @@ export const viewport = {
 };
 
 export const metadata = {
-  title: 'Next.js with Tailwind CSS',
+  title: 'Africa Business Expo',
   description: 'A boilerplate project with Next.js and Tailwind CSS',
   icons: {
     icon: [{ url: '/favicon.ico', type: 'image/x-icon' }],

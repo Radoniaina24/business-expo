@@ -19,7 +19,7 @@ import Contact from '@/components/Section/Contact';
 import Banner from '@/components/Section/Banner';
 
 export const metadata: Metadata = {
-  title: 'Accueil - Madagascar Africa Business Expo',
+  title: 'Accueil - Africa Business Expo',
   description:
     "Le plus grand événement business de l'océan Indien connectant Madagascar, l'Afrique et Maurice. Découvrez des opportunités d'affaires exceptionnelles, du networking B2B intelligent et des investissements à fort potentiel.",
 };
