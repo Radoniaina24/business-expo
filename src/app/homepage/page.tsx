@@ -34,7 +34,7 @@ export default function HomePage() {
         {/* <HeroSection expoDate={expoDate} /> */}
         <Banner />
         <Hero />
-        {/* <About /> */}
+        <About />
         {/* <WhyExhibit /> */}
         {/* <GlobalReach /> */}
         {/* <Sectors /> */}

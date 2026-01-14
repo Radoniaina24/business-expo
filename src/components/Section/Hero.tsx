@@ -85,15 +85,15 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap justify-center gap-4 mb-16">
-            <button className="group bg-gradient-to-r from-success-500 to-success-600 hover:from-success-600 hover:to-success-700 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-success-500/30 flex items-center space-x-2">
+            <button className="group bg-gradient-to-r text-sm  from-success-500 to-success-600 hover:from-success-600 hover:to-success-700 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-success-500/30 flex items-center space-x-2">
               <span>Exhibit Now</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="group bg-gradient-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-500/30 flex items-center space-x-2">
+            <button className="group bg-gradient-to-r text-sm  from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-500/30 flex items-center space-x-2">
               <span>Become a Sponsor</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="btn-outline flex items-center space-x-2">
+            <button className="btn-outline  text-sm flex items-center space-x-2">
               <span>Register as Visitor</span>
             </button>
           </div>
