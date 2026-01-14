@@ -76,7 +76,14 @@ const Header = ({ className = '' }: HeaderProps) => {
               <div className="text-xs text-muted-foreground font-medium">Business Expo</div>
             </div> */}
             <div className="my-5">
-              <Image src={'/assets/images/logo.png'} alt="logo" width={200} height={100} />
+              <Image
+                src={
+                  'https://res.cloudinary.com/dx3xhdaym/image/upload/v1768381305/mada_bus_expo-03_1_joehhr.png'
+                }
+                alt="logo"
+                width={130}
+                height={70}
+              />
             </div>
           </Link>
 
