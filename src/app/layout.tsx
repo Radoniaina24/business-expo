@@ -28,7 +28,7 @@ export default function RootLayout({
         <ReduxProvider>
           <ToastProvider>
             {children}
-            <Footer />
+            {/* <Footer /> */}
           </ToastProvider>
         </ReduxProvider>
         {/* <script

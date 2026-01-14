@@ -12,18 +12,26 @@ interface HeaderProps {
 const Header = ({ className = '' }: HeaderProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const navigationItems = [
-    { label: 'Accueil', href: '/homepage', icon: 'HomeIcon' },
-    { label: 'Contacter le support', href: '/contact-support', icon: 'ChatBubbleLeftRightIcon' },
-    // { label: 'Aperçu de l’événement', href: '/event-overview', icon: 'CalendarIcon' },
-    // { label: 'Portail exposants', href: '/exhibitor-portal', icon: 'BuildingStorefrontIcon' },
-    // { label: 'Inscription visiteurs', href: '/visitor-registration', icon: 'UserPlusIcon' },
-    // { label: 'Matchmaking B2B', href: '/business-matchmaking', icon: 'UsersIcon' },
-  ];
+  // const navigationItems = [
+  //   { label: 'Accueil', href: '/homepage', icon: 'HomeIcon' },
+  //   { label: 'Contacter le support', href: '/contact-support', icon: 'ChatBubbleLeftRightIcon' },
+  //   // { label: 'Aperçu de l’événement', href: '/event-overview', icon: 'CalendarIcon' },
+  //   // { label: 'Portail exposants', href: '/exhibitor-portal', icon: 'BuildingStorefrontIcon' },
+  //   // { label: 'Inscription visiteurs', href: '/visitor-registration', icon: 'UserPlusIcon' },
+  //   // { label: 'Matchmaking B2B', href: '/business-matchmaking', icon: 'UsersIcon' },
+  // ];
   // const moreItems = [
   //   { label: 'Contacter le support', href: '/contact-support', icon: 'ChatBubbleLeftRightIcon' }, //contact-support
   // ];
-
+  const navigationItems = [
+    { label: 'Home', href: '#home', icon: 'HomeIcon' },
+    { label: 'About', href: '#about', icon: 'InformationCircleIcon' },
+    { label: 'Why Exhibit', href: '#why-exhibit', icon: 'StarIcon' },
+    { label: 'Sectors', href: '#sectors', icon: 'Squares2X2Icon' },
+    { label: 'Program', href: '#program', icon: 'CalendarDaysIcon' },
+    { label: 'Packages', href: '#packages', icon: 'BriefcaseIcon' },
+    // { label: 'Contact', href: '#contact', icon: 'EnvelopeIcon' },
+  ];
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -110,10 +118,11 @@ const Header = ({ className = '' }: HeaderProps) => {
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-3">
             <Link
-              href="/visitor-registration"
+              href="#contact"
               className="px-4 py-2 text-sm flex gap-2 items-center font-semibold text-primary-foreground bg-primary rounded-lg hover:bg-primary/90 shadow-warm hover:shadow-warm-lg transition-smooth"
             >
-              <Icon name={'UserPlusIcon'} size={18} variant="outline" /> Inscription
+              <Icon name={'UserPlusIcon'} size={18} variant="outline" />
+              Contact
             </Link>
             {/* <Link
               href="/exhibitor-portal"
@@ -164,12 +173,20 @@ const Header = ({ className = '' }: HeaderProps) => {
               </Link> */}
 
               <Link
+                href="#contact"
+                className="px-4 py-2 text-sm flex gap-2 items-center font-semibold text-primary-foreground bg-primary rounded-lg hover:bg-primary/90 shadow-warm hover:shadow-warm-lg transition-smooth"
+              >
+                <Icon name={'UserPlusIcon'} size={18} variant="outline" />
+                Contact
+              </Link>
+
+              {/* <Link
                 href="/visitor-registration"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="  w-full px-4 py-2 text-sm flex gap-2 items-center font-semibold text-primary-foreground bg-primary rounded-lg hover:bg-primary/90 shadow-warm hover:shadow-warm-lg transition-smooth"
               >
                 <Icon name={'UserPlusIcon'} size={18} variant="outline" /> Inscription
-              </Link>
+              </Link> */}
 
               {/* <Link
                 href="/exhibitor-portal"

@@ -28,7 +28,7 @@ export default function Home() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-gray-700">
             <div className="text-sm font-medium text-gray-500 dark:text-gray-400">
               Total Inscriptions
@@ -51,7 +51,7 @@ export default function Home() {
             <div className="text-sm font-medium text-gray-500 dark:text-gray-400">Newsletter</div>
             <div className="mt-2 text-3xl font-bold text-purple-600">{stats.newsletter}</div>
           </div>
-        </div>
+        </div> */}
 
         {/* Table */}
         <DataTable title="Liste des Inscriptions" />

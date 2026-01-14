@@ -8,6 +8,15 @@ import RegistrationStats from './components/RegistrationStats';
 import PartnersSection from './components/PartnersSection';
 import Footer from './components/Footer';
 import WhyMauritiusSection from './components/WhyMauritiusSection';
+import Hero from '@/components/Section/Hero';
+import About from '@/components/Section/About';
+import WhyExhibit from '@/components/Section/WhyExhibit';
+import GlobalReach from '@/components/Section/GlobalReach';
+import Sectors from '@/components/Section/Sectors';
+import Program from '@/components/Section/Program';
+import Organizer from '@/components/Section/Organizer';
+import Contact from '@/components/Section/Contact';
+import Banner from '@/components/Section/Banner';
 
 export const metadata: Metadata = {
   title: 'Accueil - Madagascar Africa Business Expo',
@@ -22,11 +31,20 @@ export default function HomePage() {
     <>
       <Header />
       <main className="pt-16">
-        <HeroSection expoDate={expoDate} />
+        {/* <HeroSection expoDate={expoDate} /> */}
+        <Banner />
+        {/* <Hero />
+        <About />
+        <WhyExhibit />
+        <GlobalReach />
+        <Sectors />
+        <Program />
+        <Organizer />
+        <Contact /> */}
         {/* <QuickAccessCards /> */}
-        <WhyMauritiusSection />
+        {/* <WhyMauritiusSection /> */}
         {/* <InteractiveMap /> */}
-        <KeyHighlights />
+        {/* <KeyHighlights /> */}
         {/* <RegistrationStats /> */}
         {/* <PartnersSection /> */}
       </main>
