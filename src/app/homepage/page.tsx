@@ -36,8 +36,8 @@ export default function HomePage() {
         <Hero />
         <About />
         <WhyExhibit />
-        {/* <GlobalReach /> */}
-        {/* <Sectors /> */}
+        <GlobalReach />
+        <Sectors />
         {/* <Program /> */}
         {/* <Organizer /> */}
         {/* <Contact /> */}
