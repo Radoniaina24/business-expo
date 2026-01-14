@@ -80,7 +80,7 @@ export default function About() {
         </div>
 
         {/* Gateway Banner */}
-        <div className="mt-20 bg-gradient-to-r from-success-600 via-primary-600 to-accent-600 rounded-3xl p-1">
+        {/* <div className="mt-20 bg-gradient-to-r from-success-600 via-primary-600 to-accent-600 rounded-3xl p-1">
           <div className="bg-white rounded-[22px] p-8 md:p-12 text-center">
             <h3 className="font-heading font-bold text-2xl md:text-3xl text-gray-900 mb-4">
               A Global Business Gateway
@@ -90,7 +90,7 @@ export default function About() {
               through one powerful platform for business growth and international partnerships.
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
