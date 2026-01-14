@@ -95,23 +95,6 @@ export default function Organizer() {
             ))}
           </div>
         </div>
-
-        {/* Stats Bar */}
-        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
-          {[
-            { value: '10+', label: 'Years Experience' },
-            { value: '50+', label: 'Partner Countries' },
-            { value: '1000+', label: 'Member Companies' },
-            { value: '100+', label: 'Events Organized' },
-          ].map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="font-heading font-bold text-4xl md:text-5xl text-success-400 mb-2">
-                {stat.value}
-              </div>
-              <div className="text-white/60 text-sm">{stat.label}</div>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );

@@ -39,7 +39,7 @@ export default function HomePage() {
         <GlobalReach />
         <Sectors />
         <Program />
-        {/* <Organizer /> */}
+        <Organizer />
         {/* <Contact /> */}
         {/* <QuickAccessCards /> */}
         {/* <WhyMauritiusSection /> */}
