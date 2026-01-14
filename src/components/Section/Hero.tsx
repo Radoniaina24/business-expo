@@ -97,24 +97,6 @@ export default function Hero() {
               <span>Register as Visitor</span>
             </button>
           </div>
-
-          {/* Video Button */}
-          <button
-            onClick={() => setIsVideoOpen(true)}
-            className="group inline-flex items-center space-x-4 text-white/80 hover:text-white transition-colors"
-          >
-            <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/30 transition-all group-hover:scale-110">
-              <Play className="w-6 h-6 text-white ml-1" />
-            </div>
-            <span className="font-medium">Watch Promo Video</span>
-          </button>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-8 h-12 rounded-full border-2 border-white/30 flex items-start justify-center p-2">
-          <div className="w-1.5 h-3 bg-white/60 rounded-full animate-pulse" />
         </div>
       </div>
     </section>

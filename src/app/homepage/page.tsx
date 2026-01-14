@@ -33,14 +33,14 @@ export default function HomePage() {
       <main className="pt-16">
         {/* <HeroSection expoDate={expoDate} /> */}
         <Banner />
-        {/* <Hero />
-        <About />
-        <WhyExhibit />
-        <GlobalReach />
-        <Sectors />
-        <Program />
-        <Organizer />
-        <Contact /> */}
+        <Hero />
+        {/* <About /> */}
+        {/* <WhyExhibit /> */}
+        {/* <GlobalReach /> */}
+        {/* <Sectors /> */}
+        {/* <Program /> */}
+        {/* <Organizer /> */}
+        {/* <Contact /> */}
         {/* <QuickAccessCards /> */}
         {/* <WhyMauritiusSection /> */}
         {/* <InteractiveMap /> */}
