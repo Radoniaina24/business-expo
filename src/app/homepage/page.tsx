@@ -18,6 +18,8 @@ import Organizer from '@/components/Section/Organizer';
 import Contact from '@/components/Section/Contact';
 import Banner from '@/components/Section/Banner';
 
+import BannerSlide from '@/components/Section/BannerW';
+
 export const metadata: Metadata = {
   title: 'Accueil - Africa Business Expo',
   description:
@@ -33,6 +35,7 @@ export default function HomePage() {
       <main className="pt-16">
         {/* <HeroSection expoDate={expoDate} /> */}
         <Banner />
+
         <Hero />
         <About />
         <WhyExhibit />
