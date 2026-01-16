@@ -24,13 +24,13 @@ const Header = ({ className = '' }: HeaderProps) => {
   //   { label: 'Contacter le support', href: '/contact-support', icon: 'ChatBubbleLeftRightIcon' }, //contact-support
   // ];
   const navigationItems = [
-    { label: 'Home', href: '#home', icon: 'HomeIcon' },
-    { label: 'About', href: '#about', icon: 'InformationCircleIcon' },
-    { label: 'Why Exhibit', href: '#why-exhibit', icon: 'StarIcon' },
-    { label: 'Sectors', href: '#sectors', icon: 'Squares2X2Icon' },
-    { label: 'Program', href: '#program', icon: 'CalendarDaysIcon' },
-    { label: 'Packages', href: '#packages', icon: 'BriefcaseIcon' },
-    // { label: 'Contact', href: '#contact', icon: 'EnvelopeIcon' },
+    { label: 'Home', href: '/homepage', icon: 'HomeIcon' },
+    { label: 'About', href: '/homepage#about', icon: 'InformationCircleIcon' },
+    { label: 'Why Exhibit', href: '/homepage#why-exhibit', icon: 'StarIcon' },
+    { label: 'Sectors', href: '/homepage#sectors', icon: 'Squares2X2Icon' },
+    { label: 'Program', href: '/homepage#program', icon: 'CalendarDaysIcon' },
+    { label: 'Participation', href: '/participation', icon: 'UserGroupIcon' },
+    // { label: 'Contact', href: '/homepage#contact', icon: 'EnvelopeIcon' },
   ];
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -125,7 +125,7 @@ const Header = ({ className = '' }: HeaderProps) => {
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-3">
             <Link
-              href="#contact"
+              href="/homepage#contact"
               className="px-4 py-2 text-sm flex gap-2 items-center font-semibold text-primary-foreground bg-primary rounded-lg hover:bg-primary/90 shadow-warm hover:shadow-warm-lg transition-smooth"
             >
               <Icon name={'UserPlusIcon'} size={18} variant="outline" />
@@ -180,7 +180,7 @@ const Header = ({ className = '' }: HeaderProps) => {
               </Link> */}
 
               <Link
-                href="#contact"
+                href="/homepage#contact"
                 className="px-4 py-2 text-sm flex gap-2 items-center font-semibold text-primary-foreground bg-primary rounded-lg hover:bg-primary/90 shadow-warm hover:shadow-warm-lg transition-smooth"
               >
                 <Icon name={'UserPlusIcon'} size={18} variant="outline" />

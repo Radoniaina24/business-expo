@@ -78,51 +78,53 @@ export const ParticipationFormWizard: React.FC = () => {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50 py-12 px-4">
-        <div className="max-w-2xl mx-auto">
-          <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 text-center">
-            <div className="w-24 h-24 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6 animate-bounce">
-              <CheckCircleIcon className="w-14 h-14 text-emerald-600" />
-            </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-              Request Submitted Successfully!
-            </h2>
-            <p className="text-gray-600 mb-8 max-w-md mx-auto">
-              Thank you for your interest in Africa Business Expo. Our Organising Committee will
-              review your request and send you an official participation proposal within{' '}
-              <strong>5 business days</strong>.
-            </p>
-            <div className="bg-gray-50 rounded-xl p-6 mb-8 text-left max-w-md mx-auto">
-              <h3 className="font-semibold text-gray-800 mb-3">Next Steps:</h3>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-center gap-2">
-                  <CheckCircleIcon className="w-5 h-5 text-emerald-500" />
-                  Check your email inbox
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircleIcon className="w-5 h-5 text-emerald-500" />
-                  Review the official proposal
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircleIcon className="w-5 h-5 text-emerald-500" />
-                  Confirm your participation
-                </li>
-              </ul>
-            </div>
-            <button
-              onClick={() => {
-                setIsSubmitted(false);
-                setCurrentStep(1);
-              }}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 
+      <section className="packages">
+        <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50 py-12 px-4">
+          <div className="max-w-2xl mx-auto">
+            <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 text-center">
+              <div className="w-24 h-24 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6 animate-bounce">
+                <CheckCircleIcon className="w-14 h-14 text-emerald-600" />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+                Request Submitted Successfully!
+              </h2>
+              <p className="text-gray-600 mb-8 max-w-md mx-auto">
+                Thank you for your interest in Africa Business Expo. Our Organising Committee will
+                review your request and send you an official participation proposal within{' '}
+                <strong>5 business days</strong>.
+              </p>
+              <div className="bg-gray-50 rounded-xl p-6 mb-8 text-left max-w-md mx-auto">
+                <h3 className="font-semibold text-gray-800 mb-3">Next Steps:</h3>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li className="flex items-center gap-2">
+                    <CheckCircleIcon className="w-5 h-5 text-emerald-500" />
+                    Check your email inbox
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircleIcon className="w-5 h-5 text-emerald-500" />
+                    Review the official proposal
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircleIcon className="w-5 h-5 text-emerald-500" />
+                    Confirm your participation
+                  </li>
+                </ul>
+              </div>
+              <button
+                onClick={() => {
+                  setIsSubmitted(false);
+                  setCurrentStep(1);
+                }}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 
                        text-white rounded-xl hover:bg-emerald-700 transition-all
                        shadow-lg hover:shadow-xl"
-            >
-              Submit Another Request
-            </button>
+              >
+                Submit Another Request
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     );
   }
 

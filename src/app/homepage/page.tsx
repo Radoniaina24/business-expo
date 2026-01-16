@@ -13,6 +13,7 @@ import Banner from '@/components/Section/Banner';
 import ParticipationForm from '@/components/form/ParticipationForm';
 import ParticipationFormWizard from '@/components/form/ParticipationFormWizard';
 import Contact from '@/components/Section/Contact';
+import Packages from '@/components/Section/Packages';
 
 export const metadata: Metadata = {
   title: 'Accueil - Africa Business Expo',
@@ -25,7 +26,7 @@ export default function HomePage() {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <main className="pt-16">
         {/* <HeroSection expoDate={expoDate} /> */}
         <Banner />
@@ -37,7 +38,9 @@ export default function HomePage() {
         <Sectors />
         <Program />
         <Organizer />
-        {/* <ParticipationFormWizard /> */}
+
+        {/* <Packages /> */}
+        <ParticipationFormWizard />
         <Contact />
         {/* <QuickAccessCards /> */}
         {/* <WhyMauritiusSection /> */}

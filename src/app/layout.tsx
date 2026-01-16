@@ -3,6 +3,7 @@ import '../styles/index.css';
 
 import { ReduxProvider } from '@/redux/provider';
 import { ToastProvider } from '@/context/ToastContext';
+import Header from '@/components/common/Header';
 
 export const viewport = {
   width: 'device-width',
@@ -27,6 +28,7 @@ export default function RootLayout({
       <body>
         <ReduxProvider>
           <ToastProvider>
+            <Header />
             {children}
             {/* <Footer /> */}
           </ToastProvider>
