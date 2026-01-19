@@ -389,56 +389,6 @@ export default function GlobalReach() {
             </div>
           ))}
         </div>
-
-        {/* Bottom CTA Section */}
-        <div className="relative">
-          {/* Glow Background */}
-          <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-blue-500/10 to-violet-500/10 rounded-3xl blur-2xl" />
-
-          <div className="relative bg-white/80 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-gray-100 shadow-xl overflow-hidden">
-            {/* Decorative Elements */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-amber-100 to-transparent rounded-bl-full opacity-50" />
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-emerald-100 to-transparent rounded-tr-full opacity-50" />
-
-            <div className="relative flex flex-col lg:flex-row items-center justify-between gap-8">
-              {/* Left Content */}
-              <div className="flex items-center gap-6">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl blur-lg opacity-50" />
-                  <div className="relative w-20 h-20 rounded-2xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center shadow-xl">
-                    <TrendingUp className="w-10 h-10 text-white" />
-                  </div>
-                </div>
-
-                <div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-100 rounded-full mb-2">
-                    <Sparkles className="w-3 h-3 text-amber-600" />
-                    <span className="text-xs font-bold text-amber-700 uppercase tracking-wider">
-                      Premium Exposure
-                    </span>
-                  </div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">
-                    Exceptional Visibility & Market Access
-                  </h3>
-                  <p className="text-gray-600 text-lg">
-                    Gain exposure and market access beyond regional borders with our global
-                    platform.
-                  </p>
-                </div>
-              </div>
-
-              {/* CTA Button */}
-              <button className="group relative px-8 py-4 overflow-hidden rounded-full flex-shrink-0">
-                <div className="absolute inset-0 bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 transition-all duration-500" />
-                <div className="absolute inset-0 bg-gradient-to-r from-amber-400 via-orange-400 to-red-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <span className="relative flex items-center gap-3 text-white font-bold text-lg whitespace-nowrap">
-                  Explore Opportunities
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                </span>
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
 
       {/* Custom Animations */}
