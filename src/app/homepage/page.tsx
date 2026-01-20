@@ -14,6 +14,7 @@ import ParticipationForm from '@/components/form/ParticipationForm';
 import ParticipationFormWizard from '@/components/form/ParticipationFormWizard';
 import Contact from '@/components/Section/Contact';
 import Packages from '@/components/Section/Packages';
+import AfricaVisionaryAwards from '@/components/Section/AfricaVisionaryAwards';
 
 export const metadata: Metadata = {
   title: 'Accueil - Africa Business Expo',
@@ -33,6 +34,10 @@ export default function HomePage() {
 
         <Hero />
         <About />
+        <AfricaVisionaryAwards
+          imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1768890324/32_kfvsml.jpg"
+          imageAlt="Africa Visionary Awards"
+        />
         <WhyExhibit />
         <GlobalReach />
         <Sectors />
